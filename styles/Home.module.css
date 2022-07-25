@@ -1,14 +1,15 @@
 .parallaxContainer {
   display: flex;
-  padding-top: 2000px;
   background-color: white;
-  height: 550vh;
+  height: 250vh;
   width: 100%;
 }
+
 .car {
   height: 100%;
   width: 100%;
 }
+
 .carBody {
   background: url(../assets/car\ frame.png) no-repeat center;
   height: 84px;
@@ -16,6 +17,7 @@
   display: flex;
   justify-content: center;
 }
+
 .carWheelsContainer {
   display: flex;
   justify-content: space-between;
@@ -24,12 +26,14 @@
   padding-top: 54px;
   margin-left: 6.8px;
 }
+
 .carTireLeft,
 .carTireRight {
   background: url(../assets/car\ wheel.png) no-repeat center;
   width: 50px;
   height: 50px;
 }
+
 .carTireLeft {
   margin-left: 6.5px;
 }
