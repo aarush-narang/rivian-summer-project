@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import CarParallax from '../components/CarParallax';
+import CarParallax from '../components/CarParallaxComponent/CarParallax';
 import RivianSection from '../components/RivianSection/RivianSection';
 
 export default function Home() {

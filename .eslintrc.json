@@ -35,6 +35,7 @@
     "indent": ["error", 4],
     "react/react-in-jsx-scope": "off",
     "react/jsx-indent": ["error", 4],
-    "quotes": "off"
+    "quotes": "off",
+    "max-len": "off"
   }
 }

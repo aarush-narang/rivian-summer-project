@@ -42,10 +42,11 @@ export const StyledTextSectionWrapper = styled.div`
   background-color: white;
 
   h3 {
-    font-weight: 300;
+    font-weight: 350;
     font-size: 52px;
     line-height: 64px;
     text-align: center;
+    max-width: ${maxWidths.m};
   }
 `;
 
