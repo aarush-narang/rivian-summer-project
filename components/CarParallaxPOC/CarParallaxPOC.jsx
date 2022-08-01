@@ -1,11 +1,14 @@
 import { useParallax } from 'react-scroll-parallax';
 import { useEffect, useState } from 'react';
-import styles from '../../styles/Home.module.css';
+import useMouseMoveParallax from '../../hooks/useMouseMoveParallax';
+import {
+    CarFrame, CarWheel, CarWheelsContainer, ParallaxContainer,
+} from './CarParallax.styled';
 
 const CAR_WIDTH = 350;
 const CAR_TRAVEL_DISTANCE = 3 / 5;
 
-function CarParallax() {
+function CarParallaxPOC() {
     const [windowWidth, setWindowWidth] = useState(0);
     useEffect(() => {
         setWindowWidth(window.innerWidth);
@@ -35,18 +38,22 @@ function CarParallax() {
         translateY: [0, 0],
     });
 
+    const test = useMouseMoveParallax({
+        depth: 0.6,
+    });
+
     return (
-        <div className={styles.parallaxContainer}>
-            <div className={styles.car}>
-                <div className={styles.carBody} ref={carAnimation.ref}>
-                    <div className={styles.carWheelsContainer}>
-                        <div className={styles.carTireLeft} ref={wheelAnimationLeft.ref} />
-                        <div className={styles.carTireRight} ref={wheelAnimationRight.ref} />
-                    </div>
-                </div>
+        <ParallaxContainer>
+            <div ref={test.ref}>
+                <CarFrame ref={carAnimation.ref}>
+                    <CarWheelsContainer>
+                        <CarWheel style={{ marginLeft: '6.5px' }} ref={wheelAnimationLeft.ref} />
+                        <CarWheel ref={wheelAnimationRight.ref} />
+                    </CarWheelsContainer>
+                </CarFrame>
             </div>
-        </div>
+        </ParallaxContainer>
     );
 }
 
-export default CarParallax;
+export default CarParallaxPOC;
