@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import CarParallaxPOC from '../components/CarParallaxPOC/CarParallaxPOC';
+// import CarParallaxPOC from '../components/CarParallaxPOC/CarParallaxPOC';
+import CarParallax from '../components/CarParallax/CarParallax';
 import RivianSection from '../components/RivianSection/RivianSection';
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <RivianSection />
-            <CarParallaxPOC />
+            <CarParallax />
         </>
     );
 }

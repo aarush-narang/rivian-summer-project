@@ -1,9 +1,8 @@
 import { useParallax } from 'react-scroll-parallax';
 import { useEffect, useState } from 'react';
-import useMouseMoveParallax from '../../hooks/useMouseMoveParallax';
 import {
     CarFrame, CarWheel, CarWheelsContainer, ParallaxContainer,
-} from './CarParallax.styled';
+} from './CarParallaxPOC.styled';
 
 const CAR_WIDTH = 350;
 const CAR_TRAVEL_DISTANCE = 3 / 5;
@@ -38,13 +37,9 @@ function CarParallaxPOC() {
         translateY: [0, 0],
     });
 
-    const test = useMouseMoveParallax({
-        depth: 0.6,
-    });
-
     return (
         <ParallaxContainer>
-            <div ref={test.ref}>
+            <div>
                 <CarFrame ref={carAnimation.ref}>
                     <CarWheelsContainer>
                         <CarWheel style={{ marginLeft: '6.5px' }} ref={wheelAnimationLeft.ref} />
