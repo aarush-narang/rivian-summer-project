@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import carFrameImage from './images/car-frame.png';
 import carWheelImage from './images/car-wheel.png';
+import { prefix } from '../../lib/prefix';
 
 export const CarFrame = styled.div`
-    background: url(${carFrameImage.src}) no-repeat center;
+    background: url(${prefix}/${carFrameImage.src}) no-repeat center;
     height: 84px;
     width: 292px;
     display: flex;
@@ -11,7 +12,7 @@ export const CarFrame = styled.div`
 `;
 
 export const CarWheel = styled.div`
-    background: url(${carWheelImage.src}) no-repeat center;
+    background: url(${prefix}/${carWheelImage.src}) no-repeat center;
     width: 50px;
     height: 50px;
 `;

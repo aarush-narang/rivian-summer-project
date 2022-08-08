@@ -8,6 +8,7 @@ import carFrameImage from './images/car-frame.png';
 import carHeadlightImage from './images/car-headlight.png';
 import carLeftWheelImage from './images/car-wheel-left-temp.png';
 import carRightWheelImage from './images/car-wheel-right-temp.png';
+import { prefix } from '../../lib/prefix';
 
 export default function CarParallax() {
     const [carWidth, setCarWidth] = useState(0);
@@ -61,10 +62,10 @@ export default function CarParallax() {
         >
             <div ref={mouseMoveCarAnimation.ref}>
                 <ParallaxContainer ref={carAnimation.ref}>
-                    <CarFrame src={carFrameImage.src} width={carWidth} ref={carFrameAnimation.ref} />
-                    <CarHeadlight src={carHeadlightImage.src} width={carWidth} ref={carHeadlightAnimation.ref} />
-                    <CarLeftWheel src={carLeftWheelImage.src} width={carWidth} ref={carLeftWheelAnimation.ref} />
-                    <CarRightWheel src={carRightWheelImage.src} width={carWidth} ref={carRightWheelAnimation.ref} />
+                    <CarFrame src={`${prefix}/${carFrameImage.src}`} width={carWidth} ref={carFrameAnimation.ref} />
+                    <CarHeadlight src={`${prefix}/${carHeadlightImage.src}`} width={carWidth} ref={carHeadlightAnimation.ref} />
+                    <CarLeftWheel src={`${prefix}/${carLeftWheelImage.src}`} width={carWidth} ref={carLeftWheelAnimation.ref} />
+                    <CarRightWheel src={`${prefix}/${carRightWheelImage.src}`} width={carWidth} ref={carRightWheelAnimation.ref} />
                 </ParallaxContainer>
             </div>
         </div>
