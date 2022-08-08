@@ -2,20 +2,20 @@ import { useEffect, useState } from 'react';
 import { useParallax } from 'react-scroll-parallax';
 import useMouseMoveParallax from '../../hooks/useMouseMoveParallax';
 import {
-    ParallaxContainer, CarFrame, CarHeadlight, CarWheelsContainer, CarLeftWheel, CarRightWheel,
+    ParallaxContainer, CarFrame, CarHeadlight, CarLeftWheel, CarRightWheel,
 } from './CarParallax.styled';
 import carFrameImage from './images/car-frame.png';
 import carHeadlightImage from './images/car-headlight.png';
-import carLeftWheelImage from './images/car-wheel-left.png';
-import carRightWheelImage from './images/car-wheel-right.png';
+import carLeftWheelImage from './images/car-wheel-left-temp.png';
+import carRightWheelImage from './images/car-wheel-right-temp.png';
 
 export default function CarParallax() {
-    const [windowWidth, setWindowWidth] = useState(0);
+    const [carWidth, setCarWidth] = useState(0);
     useEffect(() => {
-        setWindowWidth(window.innerWidth);
+        setCarWidth(window.innerWidth - 100);
 
         window.onresize = () => {
-            setWindowWidth(window.innerWidth);
+            setCarWidth(window.innerWidth - 100);
         };
     }, []);
 
@@ -24,7 +24,7 @@ export default function CarParallax() {
         translateY: [0, 200],
     });
     const mouseMoveCarAnimation = useMouseMoveParallax({
-        depth: 0.5,
+        depth: 0.2,
         direction: 0,
     });
     const carFrameAnimation = useParallax({
@@ -42,15 +42,15 @@ export default function CarParallax() {
     const carLeftWheelAnimation = useParallax({
         speed: 10,
         easing: [0.46, 0.03, 0.6, 0.97],
-        translateX: [0, -30],
-        translateY: [0, 30],
+        translateX: [0, -8],
+        translateY: [0, 8],
         scale: [1, 0.98],
     });
     const carRightWheelAnimation = useParallax({
         speed: 10,
         easing: [0.46, 0.03, 0.6, 0.97],
-        translateX: [0, 30],
-        translateY: [0, 30],
+        translateX: [0, 8],
+        translateY: [0, 8],
         scale: [1, 0.98],
     });
 
@@ -61,12 +61,10 @@ export default function CarParallax() {
         >
             <div ref={mouseMoveCarAnimation.ref}>
                 <ParallaxContainer ref={carAnimation.ref}>
-                    <CarFrame src={carFrameImage.src} width={windowWidth / 3} ref={carFrameAnimation.ref} />
-                    <CarHeadlight src={carHeadlightImage.src} width={(carHeadlightImage.width / carFrameImage.width) * (windowWidth / 3)} ref={carHeadlightAnimation.ref} />
-                    <CarWheelsContainer style={{ width: (1320 / carFrameImage.width) * (windowWidth / 3) }}>
-                        <CarLeftWheel src={carLeftWheelImage.src} width={((carLeftWheelImage.width * 3) / carFrameImage.width) * (windowWidth / 3)} ref={carLeftWheelAnimation.ref} />
-                        <CarRightWheel src={carRightWheelImage.src} width={((carRightWheelImage.width * 3) / carFrameImage.width) * (windowWidth / 3)} ref={carRightWheelAnimation.ref} />
-                    </CarWheelsContainer>
+                    <CarFrame src={carFrameImage.src} width={carWidth} ref={carFrameAnimation.ref} />
+                    <CarHeadlight src={carHeadlightImage.src} width={carWidth} ref={carHeadlightAnimation.ref} />
+                    <CarLeftWheel src={carLeftWheelImage.src} width={carWidth} ref={carLeftWheelAnimation.ref} />
+                    <CarRightWheel src={carRightWheelImage.src} width={carWidth} ref={carRightWheelAnimation.ref} />
                 </ParallaxContainer>
             </div>
         </div>

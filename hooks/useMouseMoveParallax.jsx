@@ -1,26 +1,25 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function useMouseMoveParallax({
     depth = 1, // relative depth of movement
     direction = 0, // in degrees
 }) {
     const elementRef = useRef(null);
-    const elementPos = useMemo(() => {
-        if (!elementRef.current) return { x: 0, y: 0 };
-        const box = elementRef.current.getBoundingClientRect();
-        const xCenter = (box.left + box.right) / 2;
-        const yCenter = (box.top + box.bottom) / 2;
-        return { x: xCenter, y: yCenter };
-    }, [elementRef]);
 
     useEffect(() => {
+        // check if element is in view
         const handleMouseMove = (e) => {
-            const { x, y } = elementPos;
             const { clientX, clientY } = e;
-            const xDiff = clientX - x;
-            const yDiff = clientY - y;
+
+            if (clientX === 0 || clientY === 0) return;
+
+            const box = elementRef.current.getBoundingClientRect();
+            const xDiff = clientX - (box.width / 2);
+            const yDiff = clientY - (box.height / 2);
+
             const xPercent = (xDiff / window.innerWidth) * 100;
             const yPercent = (yDiff / window.innerHeight) * 100;
+
             const xOffset = xPercent * depth;
             const yOffset = yPercent * depth;
 
@@ -37,7 +36,7 @@ export default function useMouseMoveParallax({
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
         };
-    }, [depth, elementPos]);
+    }, [depth, direction]);
 
     return {
         ref: elementRef,
