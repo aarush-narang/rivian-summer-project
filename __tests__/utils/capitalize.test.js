@@ -8,6 +8,6 @@ describe('Capitalize a word', () => {
         expect(capitalize('Hello')).toBe('Hello');
     });
     test('Capitalizing null should throw an error', () => {
-        expect(() => capitalize(null)).toThrow();
+        expect(capitalize(null)).toBeNull();
     });
 });
