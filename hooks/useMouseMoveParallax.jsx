@@ -12,6 +12,7 @@ export default function useMouseMoveParallax({
             const { clientX, clientY } = e;
 
             if (clientX === 0 || clientY === 0) return;
+            if (!elementRef.current) return;
 
             const box = elementRef.current.getBoundingClientRect();
             const xDiff = clientX - (box.width / 2);

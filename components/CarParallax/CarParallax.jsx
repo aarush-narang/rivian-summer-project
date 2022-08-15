@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParallax } from 'react-scroll-parallax';
-import useMouseMoveParallax from '../../hooks/useMouseMoveParallax';
+// import useMouseMoveParallax from '../../hooks/useMouseMoveParallax';
 import {
     ParallaxContainer, CarFrame, CarHeadlight, CarLeftWheel, CarRightWheel,
 } from './CarParallax.styled';
@@ -14,19 +14,33 @@ export default function CarParallax() {
     useEffect(() => {
         setCarWidth(window.innerWidth - 100);
 
-        window.onresize = () => {
+        const resizeHandler = () => {
             setCarWidth(window.innerWidth - 100);
+        };
+        window.addEventListener('resize', resizeHandler);
+
+        return () => {
+            window.removeEventListener('resize', resizeHandler);
         };
     }, []);
 
-    const carAnimation = useParallax({ // maybe remove later, might take up too much space
-        speed: 10,
-        translateY: [0, 200],
-    });
-    const mouseMoveCarAnimation = useMouseMoveParallax({
-        depth: 0.2,
-        direction: 0,
-    });
+    // const mouseMoveCarAnimation1 = useMouseMoveParallax({
+    //     depth: 0.1,
+    //     direction: 40,
+    // });
+    // const mouseMoveCarAnimation2 = useMouseMoveParallax({
+    //     depth: 0.1,
+    //     direction: 80,
+    // });
+    // const mouseMoveCarAnimation3 = useMouseMoveParallax({
+    //     depth: 0.1,
+    //     direction: 120,
+    // });
+    // const mouseMoveCarAnimation4 = useMouseMoveParallax({
+    //     depth: 0.1,
+    //     direction: 160,
+    // });
+
     const carFrameAnimation = useParallax({
         speed: 10,
         easing: [0.46, 0.03, 0.6, 0.97],
@@ -59,8 +73,8 @@ export default function CarParallax() {
             display: 'flex', width: '100%', height: '100%', justifyContent: 'center',
         }}
         >
-            <div ref={mouseMoveCarAnimation.ref}>
-                <ParallaxContainer ref={carAnimation.ref}>
+            <div>
+                <ParallaxContainer>
                     <CarFrame src={carFrameImage.src} width={carWidth} ref={carFrameAnimation.ref} />
                     <CarHeadlight src={carHeadlightImage.src} width={carWidth} ref={carHeadlightAnimation.ref} />
                     <CarLeftWheel src={carLeftWheelImage.src} width={carWidth} ref={carLeftWheelAnimation.ref} />
