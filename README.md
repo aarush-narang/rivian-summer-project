@@ -1,13 +1,39 @@
 # Parallax Animation For Rivian
 
-Created using NextJS, this is an animation with the rivian truck moving across the screen using parallax.
+Created using [NextJS](), this is an animation with the rivian truck moving across the screen using parallax.
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install the following dependencies
+Node Version: 16.13.2
+
+Packages:
 
 - [react-scroll-parallax](https://www.npmjs.com/package/react-scroll-parallax) ([docs](https://react-scroll-parallax.damnthat.tv/docs/intro))
+- [styled-components](https://www.npmjs.com/package/react-scroll-parallax) ([docs](https://styled-components.com/docs))
 
+Install Dependencies:
+
+```sh
+npm install
+```
+
+Run the local server:
+
+```sh
+npm run dev
+```
+
+Run linting:
+
+```sh
+npm run lint
+```
+
+Run Tests:
+
+```sh
+npm run test
+```
 
 ## How to Use
 

@@ -9,7 +9,7 @@ export const ParallaxContainer = styled.div`
     background-color: white;
     pointer-events: none;
     user-select: none;
-    margin: 200px 0 0 0;
+    margin: 100px 0 0 0;
 `;
 
 export const CarFrame = styled.img`

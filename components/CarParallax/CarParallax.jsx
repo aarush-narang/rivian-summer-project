@@ -6,8 +6,8 @@ import {
 } from './CarParallax.styled';
 import carFrameImage from './images/car-frame.png';
 import carHeadlightImage from './images/car-headlight.png';
-import carLeftWheelImage from './images/car-wheel-left-temp.png';
-import carRightWheelImage from './images/car-wheel-right-temp.png';
+import carLeftWheelImage from './images/car-wheel-left.png';
+import carRightWheelImage from './images/car-wheel-right.png';
 
 export default function CarParallax() {
     const [carWidth, setCarWidth] = useState(0);
@@ -70,7 +70,7 @@ export default function CarParallax() {
 
     return (
         <div style={{
-            display: 'flex', width: '100%', height: '100%', justifyContent: 'center',
+            display: 'flex', width: '100%', height: '90vh', justifyContent: 'center',
         }}
         >
             <div>

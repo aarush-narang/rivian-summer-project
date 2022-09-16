@@ -1,3 +1,4 @@
+import AboutDescription from '../components/AboutDescription/AboutDescription';
 import MetaTags from '../components/Meta/Meta';
 
 const NEXT_DOMAIN_ROOT = "https://aarush-narang.github.io/rivian-summer-project";
@@ -11,7 +12,7 @@ export default function About() {
     return (
         <>
             <MetaTags url={url} description={description} image={image} title={title} />
-            <p>{description}</p>
+            <AboutDescription />
         </>
     );
 }

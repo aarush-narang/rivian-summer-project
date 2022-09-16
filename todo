@@ -1,0 +1,6 @@
+- when you hover over the car, you can drag the car to see the other sides of the car (3d rendering)
+
+  - google up a different rendering and try to retrofit it to r1t
+  - maybe reverse engineer
+
+- text fades in or comes in from side as you scroll it into view
