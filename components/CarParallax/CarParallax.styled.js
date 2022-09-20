@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const ParallaxFrame = styled.div`
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    justify-content: center;
+`;
+
 export const ParallaxContainer = styled.div`
     display: flex;
     align-items: flex-end;
@@ -9,7 +16,7 @@ export const ParallaxContainer = styled.div`
     background-color: white;
     pointer-events: none;
     user-select: none;
-    margin: 200px 0 0 0;
+    margin: 100px 0 0 0;
 `;
 
 export const CarFrame = styled.img`
