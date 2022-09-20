@@ -10,7 +10,7 @@ export default function MetaTags({
     return (
         <Head>
             <title>{title}</title>
-            <meta name="description" content="" />
+            <meta name="description" content={description} />
             <meta charSet="utf-8" />
 
             <meta property="og:title" content={title} />

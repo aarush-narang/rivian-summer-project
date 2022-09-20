@@ -5,12 +5,12 @@ export const DescriptionContainer = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 50px;
+    padding: 20px;
 `;
 
 export const Description = styled.p`
     font-size: 1.1rem;
-    width: 80%;
+    width: 100%;
     text-align: center;
     overflow-wrap: break-word;
     word-wrap: break-word;

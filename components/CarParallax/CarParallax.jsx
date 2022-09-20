@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParallax } from 'react-scroll-parallax';
 // import useMouseMoveParallax from '../../hooks/useMouseMoveParallax';
 import {
-    ParallaxContainer, CarFrame, CarHeadlight, CarLeftWheel, CarRightWheel,
+    ParallaxContainer, CarFrame, CarHeadlight, CarLeftWheel, CarRightWheel, ParallaxFrame,
 } from './CarParallax.styled';
 import carFrameImage from './images/car-frame.png';
 import carHeadlightImage from './images/car-headlight.png';
@@ -69,18 +69,15 @@ export default function CarParallax() {
     });
 
     return (
-        <div style={{
-            display: 'flex', width: '100%', height: '90vh', justifyContent: 'center',
-        }}
-        >
+        <ParallaxFrame>
             <div>
                 <ParallaxContainer>
-                    <CarFrame src={carFrameImage.src} width={carWidth} ref={carFrameAnimation.ref} />
-                    <CarHeadlight src={carHeadlightImage.src} width={carWidth} ref={carHeadlightAnimation.ref} />
-                    <CarLeftWheel src={carLeftWheelImage.src} width={carWidth} ref={carLeftWheelAnimation.ref} />
-                    <CarRightWheel src={carRightWheelImage.src} width={carWidth} ref={carRightWheelAnimation.ref} />
+                    <CarFrame src={carFrameImage.src} width={carWidth} ref={carFrameAnimation.ref} alt="Parallax Car Frame" />
+                    <CarHeadlight src={carHeadlightImage.src} width={carWidth} ref={carHeadlightAnimation.ref} alt="Parallax Car Headlight" />
+                    <CarLeftWheel src={carLeftWheelImage.src} width={carWidth} ref={carLeftWheelAnimation.ref} alt="Parallax Car Left Wheel" />
+                    <CarRightWheel src={carRightWheelImage.src} width={carWidth} ref={carRightWheelAnimation.ref} alt="Parallax Car Right Wheel" />
                 </ParallaxContainer>
             </div>
-        </div>
+        </ParallaxFrame>
     );
 }
