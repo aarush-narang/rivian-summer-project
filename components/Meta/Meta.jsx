@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
@@ -27,6 +28,17 @@ export default function MetaTags({
 
             <meta name="theme-color" content="#000000" />
             <link type="application/xml" href="/sitemap.xml" />
+
+            {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-46N8RCD9HT" />
+
+            <script dangerouslySetInnerHTML={{
+                html: `window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-46N8RCD9HT');`,
+            }}
+            />
         </Head>
     );
 }
