@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParallax } from 'react-scroll-parallax';
-// import useMouseMoveParallax from '../../hooks/useMouseMoveParallax';
 import {
     ParallaxContainer, CarFrame, CarHeadlight, CarLeftWheel, CarRightWheel, ParallaxFrame,
 } from './CarParallax.styled';
@@ -23,23 +22,6 @@ export default function CarParallax() {
             window.removeEventListener('resize', resizeHandler);
         };
     }, []);
-
-    // const mouseMoveCarAnimation1 = useMouseMoveParallax({
-    //     depth: 0.1,
-    //     direction: 40,
-    // });
-    // const mouseMoveCarAnimation2 = useMouseMoveParallax({
-    //     depth: 0.1,
-    //     direction: 80,
-    // });
-    // const mouseMoveCarAnimation3 = useMouseMoveParallax({
-    //     depth: 0.1,
-    //     direction: 120,
-    // });
-    // const mouseMoveCarAnimation4 = useMouseMoveParallax({
-    //     depth: 0.1,
-    //     direction: 160,
-    // });
 
     const carFrameAnimation = useParallax({
         speed: 10,

@@ -38,6 +38,8 @@
     "react/jsx-indent": ["error", 4],
     "quotes": "off",
     "max-len": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-plusplus": "off",
+    "no-unused-vars": "warn"
   }
 }
