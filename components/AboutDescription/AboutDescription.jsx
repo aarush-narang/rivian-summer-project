@@ -17,7 +17,7 @@ function AboutDescription() {
                 <br />
                 If you would like to check out my portfolio, you can go to
                 {' '}
-                <a href="https://aarush-narang.vercel.app/portfolio/" target="_blank" rel="noreferrer noopener">github</a>
+                <a href="https://portfolio.aarushnarang.com/" target="_blank" rel="noreferrer noopener">github</a>
                 .
             </Description>
         </DescriptionContainer>

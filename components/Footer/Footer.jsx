@@ -14,7 +14,7 @@ function Footer() {
             <FooterSection>
                 <FooterLabel>Projects</FooterLabel>
                 <FooterLinks>
-                    <a href="https://aarush-narang.vercel.app/portfolio/" target="_blank" rel="noreferrer noopener">My Portfolio</a>
+                    <a href="https://portfolio.aarushnarang.com/" target="_blank" rel="noreferrer noopener">My Portfolio</a>
                 </FooterLinks>
             </FooterSection>
             {/* <FooterSection>
