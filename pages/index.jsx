@@ -3,7 +3,7 @@ import MetaTags from '../components/Meta/Meta';
 import CarParallax from '../components/CarParallax/CarParallax';
 import RivianSection from '../components/RivianSection/RivianSection';
 
-const NEXT_DOMAIN_ROOT = "https://aarush-narang.github.io/rivian-summer-project";
+const NEXT_DOMAIN_ROOT = process.env.NEXT_SITE_DOMAIN_ROOT;
 
 const url = `${NEXT_DOMAIN_ROOT}/`;
 const description = "This website is an animation of a rivian truck. It is built on NextJS.";
